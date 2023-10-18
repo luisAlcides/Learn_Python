@@ -5,7 +5,8 @@ __pycache__/
 
 *.png
 *.jpg
-
+*.wav
+*.mp3
 # C extensions
 *.so
 
