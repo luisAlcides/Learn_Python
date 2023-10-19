@@ -39,17 +39,23 @@ tablenumber: [name, vip_status]
 """
 
 # Ejercicio 1
-table_number = []
+tables = {
+    1: ['Jiho', False],
+    2: [],
+    3: ['Martha', True],
+    4: ['Karla', False],
+    5: [],
+    6: ['Yoni', False],
+    7: []
+}
 
 
-def client(name, vip_status=False):
-    table_number.append({name, vip_status})
+def assign_table(table_number, name, vip_status=False):
+    tables[table_number] = [name, vip_status]
 
 
-client('Jiho', False)
-client('Leonard', False)
-client('Marco', True)
-client('Mauro', False)
-
-
-print(table_number)
+assign_table(6, 'Yoni', False)
+assign_table(table_number=3, name='Martha', vip_status=True)
+assign_table(4, 'Karla')
+print()
+print(tables)
