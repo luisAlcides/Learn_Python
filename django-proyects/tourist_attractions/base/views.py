@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+# This is the dictionary for all the attractions
 attractions = [
   { 'attraction_name' : 'Niagra Falls', 'state' : 'New York'},
   { 'attraction_name' : 'Grand Canyon National Park', 'state' : 'Arizona'},
@@ -11,10 +11,11 @@ attractions = [
 ]
 
 def home(request):
-    context = {'attractions': attractions}
-    return render(request, 'base/home.html', context)
+  # The context is all of the variables we want passed into the template.
+  context = {"attractions" : attractions}
+  return render(request, 'base/home.html', context)
 
 def details(request, statename):
-    context = {'attractions': attractions}
-    statename.replace("-", " ")
-    return render(request, 'base/details.html', context)
+  # We replace the dash with a space for later ease of use. The dash is there because of the slugify filter.
+  context = {"attractions" : attractions, "statename" : statename.replace("-", " ")}
+  return render(request, 'base/details.html', context)
