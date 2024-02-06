@@ -1,0 +1,72 @@
+{
+  "ShowLogs": true,
+  "QMainWindow": [
+    {
+      "tittle": "gui_sqlite"
+    }
+  ],
+  "QSettings": [
+    {
+      "ThemeSettings": [
+        {
+          "CustomTheme": [
+            {
+              "Background-color": "#000000",
+              "Text-color": "#FFFFFF",
+              "Accent-color": "#FFFFFF",
+              "Icons-color": "#FFFFFF",
+              "Theme-name": "Default-theme",
+              "Default-Theme": true
+            }
+          ]
+        }
+      ],
+      "AppSettings": {
+        "OrginizationName": "gui_sqlite",
+        "ApplicationName": "lu",
+        "OrginizationDormain": "gui_sqlite.org"
+      }
+    }
+  ],
+    "QtBinding": "PySide6",
+
+    "QCustomSlideMenu": [{
+      "name": "leftMenu",
+      "defaultSize": [
+        {
+          "width": 300,
+          "height": "auto"
+        }
+      ],
+        "collapsedSize": [
+          {
+          "width": 0,
+          "height": "auto"
+        }
+      ],
+        "expandedSize": [
+          {
+          "width": 300,
+          "height": "auto"
+        }
+      ],
+        "toggleButton": [
+          {
+          "buttonName": "menuBtn",
+          "icons": [
+            {
+            "whenMenuIsCollapsed": ":/feather/Icons/feather/align-justify.png",
+            "whenMenuIsExpanded": ":/feather/Icons/feather/chevron-left.png"
+          }
+        ]
+        }
+      ],
+        "menuTransitionAnimation": [
+          {
+          "animationDuration": 1000,
+          "animationEasingCurve": "Linear"
+        }
+      ]
+      }
+    ]
+}
