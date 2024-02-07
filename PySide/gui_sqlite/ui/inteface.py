@@ -7,7 +7,7 @@
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
-
+import sys
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
@@ -304,3 +304,10 @@ class Ui_MainWindow(object):
         self.aboutBtn.setText(QCoreApplication.translate("MainWindow", u"About", None))
     # retranslateUi
 
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    MainWindow = QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec())

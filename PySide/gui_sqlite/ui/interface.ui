@@ -87,8 +87,8 @@ QPushButton{
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="../Qss/icons/_icons.qrc">
-              <normaloff>:/feather/Icons/feather/align-justify.png</normaloff>:/feather/Icons/feather/align-justify.png</iconset>
+             <iconset>
+              <normaloff>../c377224e/align-justify.png</normaloff>../c377224e/align-justify.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -129,7 +129,7 @@ QPushButton{
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="../Qss/icons/_icons.qrc">
+             <iconset>
               <normaloff>:/feather/Icons/feather/search.png</normaloff>:/feather/Icons/feather/search.png</iconset>
             </property>
             <property name="iconSize">
@@ -146,7 +146,7 @@ QPushButton{
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="../Qss/icons/_icons.qrc">
+             <iconset>
               <normaloff>:/feather/Icons/feather/bell.png</normaloff>:/feather/Icons/feather/bell.png</iconset>
             </property>
             <property name="iconSize">
@@ -163,7 +163,7 @@ QPushButton{
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="../Qss/icons/_icons.qrc">
+             <iconset>
               <normaloff>:/feather/Icons/feather/activity.png</normaloff>:/feather/Icons/feather/activity.png</iconset>
             </property>
             <property name="iconSize">
@@ -197,7 +197,7 @@ QPushButton{
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="../Qss/icons/_icons.qrc">
+             <iconset>
               <normaloff>:/feather/Icons/feather/user.png</normaloff>:/feather/Icons/feather/user.png</iconset>
             </property>
             <property name="iconSize">
@@ -304,7 +304,7 @@ QPushButton{
                    <string>Home</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="../Qss/icons/_icons.qrc">
+                   <iconset>
                     <normaloff>:/feather/Icons/feather/home.png</normaloff>:/feather/Icons/feather/home.png</iconset>
                   </property>
                  </widget>
@@ -315,7 +315,7 @@ QPushButton{
                    <string>Reports</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="../Qss/icons/_icons.qrc">
+                   <iconset>
                     <normaloff>:/material_design/Icons/material_design/report.png</normaloff>:/material_design/Icons/material_design/report.png</iconset>
                   </property>
                  </widget>
@@ -326,7 +326,7 @@ QPushButton{
                    <string>My Account</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="../Qss/icons/_icons.qrc">
+                   <iconset>
                     <normaloff>:/material_design/Icons/material_design/account_circle.png</normaloff>:/material_design/Icons/material_design/account_circle.png</iconset>
                   </property>
                  </widget>
@@ -377,7 +377,7 @@ QPushButton{
                    <string>Settings</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="../Qss/icons/_icons.qrc">
+                   <iconset>
                     <normaloff>:/feather/Icons/feather/settings.png</normaloff>:/feather/Icons/feather/settings.png</iconset>
                   </property>
                  </widget>
@@ -388,7 +388,7 @@ QPushButton{
                    <string>Help</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="../Qss/icons/_icons.qrc">
+                   <iconset>
                     <normaloff>:/feather/Icons/feather/help-circle.png</normaloff>:/feather/Icons/feather/help-circle.png</iconset>
                   </property>
                  </widget>
@@ -399,7 +399,7 @@ QPushButton{
                    <string>About</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="../Qss/icons/_icons.qrc">
+                   <iconset>
                     <normaloff>:/material_design/Icons/material_design/roundabout_left.png</normaloff>:/material_design/Icons/material_design/roundabout_left.png</iconset>
                   </property>
                  </widget>
@@ -443,7 +443,7 @@ QPushButton{
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../Qss/icons/_icons.qrc"/>
+  <include location="../481409a2/_icons.qrc"/>
  </resources>
  <connections/>
 </ui>
