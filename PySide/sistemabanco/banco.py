@@ -1,10 +1,10 @@
 from PyQt6.QtWidgets import QApplication
 
-from ui.LoginWindow import LoginWindow
+from ui.Login import Login
 
 
-class Bank():
+class Banco():
     def __init__(self):
         self.app = QApplication([])
-        self.login = LoginWindow()
+        self.login = Login()
         self.app.exec()

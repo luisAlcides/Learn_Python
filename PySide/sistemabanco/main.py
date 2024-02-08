@@ -1,3 +1,3 @@
-from bank import Bank
+from banco import Banco
 
-app = Bank()
+app = Banco()

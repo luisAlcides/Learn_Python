@@ -14,7 +14,7 @@
    <string>Inicio de sesion</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../afe482b0/images.qrc">
+   <iconset>
     <normaloff>:/images/d28c7f7b/banco.png</normaloff>:/images/d28c7f7b/banco.png</iconset>
   </property>
   <property name="styleSheet">
@@ -34,7 +34,7 @@ background-color: rgb(255, 255, 255);</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../afe482b0/images.qrc">:/images/d28c7f7b/banco.png</pixmap>
+    <pixmap resource="../a1e250ea/icons.qrc">:/icons/banco.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -96,7 +96,7 @@ background-color: rgb(255, 255, 255);</string>
     <string>Password:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txtUser">
+  <widget class="QLineEdit" name="txtUsuario">
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -109,7 +109,7 @@ background-color: rgb(255, 255, 255);</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txtPassword">
+  <widget class="QLineEdit" name="txtClave">
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -125,7 +125,7 @@ background-color: rgb(255, 255, 255);</string>
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnLogin">
+  <widget class="QPushButton" name="btnAcceder">
    <property name="geometry">
     <rect>
      <x>210</x>
@@ -150,7 +150,7 @@ background-color: rgb(255, 255, 255);</string>
     <string>Iniciar</string>
    </property>
   </widget>
-  <widget class="QLabel" name="labelMessage">
+  <widget class="QLabel" name="lblMensaje">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -173,7 +173,7 @@ background-color: rgb(255, 255, 255);</string>
   </widget>
  </widget>
  <resources>
-  <include location="../afe482b0/images.qrc"/>
+  <include location="../a1e250ea/icons.qrc"/>
  </resources>
  <connections/>
 </ui>
