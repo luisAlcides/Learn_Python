@@ -35,5 +35,23 @@ class Conexion():
             cur.close()  # Cerrar el cursor
         except Exception as e:
             print('Ha ocurrido un error al crear el admin', e)
+    
+    def crearAdminIfNotExists(self):
+        # Check if an admin exists
+        cur = self.con.cursor()
+        exists = cur.execute("SELECT 1 FROM usuarios WHERE usuario='admin'").fetchone()
+        cur.close()
+
+        if not exists:
+            # Create admin if not found
+            self.crearAdmin()
+    
+    
             
-            
+    def conectar(self):
+        try:
+            self.con = sqlite3.connect('banco.db')
+            self.crearAdminIfNotExists()  # Check and create admin if needed
+            return self.con
+        except Exception as e:
+            print('No se pudo conectar ', e)
