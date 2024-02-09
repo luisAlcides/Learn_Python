@@ -16,6 +16,18 @@ class Conexion():
                         nombre TEXT,
                         usuario TEXT UNIQUE,
                         clave TEXT
+                    );
+
+                    CREATE TABLE IF NOT EXISTS transferencias(
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        tipo TEXT,
+                        documento TEXT,
+                        motivo TEXT,
+                        monto NUMERIC,
+                        internacional INTEGER DEAFULT=0,
+                        dolares INTEGER DEFAULT=0,
+                        verificado INTEGER DEFAULT=0,
+                        fecha_registro TEXT
                     )
                 '''
             cur = self.con.cursor()

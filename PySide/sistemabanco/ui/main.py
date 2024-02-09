@@ -1,5 +1,6 @@
 from PyQt6 import uic
 from PyQt6.QtWidgets import QMessageBox
+from model.transferencia import Transferencia
 
 from ui.registro import RegistroWindow
 
@@ -43,7 +44,15 @@ class MainWindow():
             self.registro.txtMonto.setFocus()
         
         else:
-            print('Trans', str(self.registro.checkInternacional.isChecked()))
-            print('Dolar', str(self.registro.checkDolares.isChecked()))
+            transferencia = Transferencia(
+                tipo=self.registro.cbTipo.currentText(),
+                documento=self.registro.txtDocumento.text(),
+                motivo=self.registro.cbMotivo.currentText(),
+                monto=self.registro.txtMonto.text(),
+                internacional=self.registro.checkInternacional.isChecked(),
+                dolares = self.registro.checkDolares.isChecked()
+                
+            )
+            
     
         
