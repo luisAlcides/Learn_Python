@@ -18,31 +18,35 @@ class Conexion():
                         clave TEXT
                     );
 
-                    CREATE TABLE IF NOT EXISTS transferencias(
+                    
+                '''
+            sql_create_table_transferencias = '''
+                CREATE TABLE IF NOT EXISTS transferencias(
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         tipo TEXT,
                         documento TEXT,
                         motivo TEXT,
-                        monto NUMERIC,
-                        internacional INTEGER DEAFULT=0,
-                        dolares INTEGER DEFAULT=0,
-                        verificado INTEGER DEFAULT=0,
+                        monto REAL,
+                        internacional INTEGER DEFAULT 0,
+                        dolares INTEGER DEFAULT 0,
+                        verificado INTEGER DEFAULT 0,
                         fecha_registro TEXT
                     )
-                '''
+            '''
             cur = self.con.cursor()
-            cur.execute(sql_create_table1)  # Ejecutar la consulta
+            cur.execute(sql_create_table1)
+            cur.execute(sql_create_table_transferencias)
             cur.close()
-            self.crearAdmin()
+            self.crearAdminIfNotExists()
         except Exception as e:
             print('Hubo un error al crear la tabla usuarios', e)
             
     def crearAdmin(self):
         try:
             sql_insert ='''
-                    INSERT INTO usuarios(nombre, usuario, clave) values('{}', '{}', '{}')'''.format('administrador', 'admin', 'admin')
+                    INSERT INTO usuarios(nombre, usuario, clave) values(?, ?, ?)'''
             cur = self.con.cursor()
-            cur.execute(sql_insert)
+            cur.execute(sql_insert, ('administrador', 'admin', 'admin'))
             self.con.commit() 
             cur.close()  # Cerrar el cursor
         except Exception as e:
@@ -54,7 +58,7 @@ class Conexion():
         exists = cur.execute("SELECT 1 FROM usuarios WHERE usuario='admin'").fetchone()
         cur.close()
 
-        if not exists:
+        if exists is None:
             # Create admin if not found
             self.crearAdmin()
     

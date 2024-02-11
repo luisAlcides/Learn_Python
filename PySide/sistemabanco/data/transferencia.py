@@ -5,7 +5,7 @@ from model.transferencia import Transferencia
 class TransferenciaData():
     
     def registrar(self, info:Transferencia):
-        fecha = datetime.now().strftime('%d/%m/%y %H:%M:%S')
+        fecha = datetime.datetime.now().strftime('%d/%m/%y %H:%M:%S')
         self.db = con.Conexion().conectar()
         self.cursor = self.db.cursor()
         self.cursor.execute('''
