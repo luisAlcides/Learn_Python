@@ -12,10 +12,10 @@ class CheckInKioskTests(unittest.TestCase):
         kiosk.return_to_welcome_page()
 
     def test_check_in_with_flight_number(self):
-        print('Testing the check-in process based on flight number')
+        print('Testing_unittest the check-in process based on flight number')
 
     def test_check_in_with_passport(self):
-        print('Testing the check-in process based on passport')
+        print('Testing_unittest the check-in process based on passport')
 
     @classmethod
     def tearDownClass(cls):

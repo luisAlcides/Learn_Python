@@ -1,3 +1,5 @@
+import sqlite3
+
 from PyQt6.QtWidgets import QWidget, QApplication, QApplication, QLabel, QMainWindow, QVBoxLayout, QTableWidget, \
     QTableWidgetItem, QLineEdit, QPushButton, QMessageBox
 import sys
@@ -29,11 +31,29 @@ class Window(QMainWindow):
             {'name': 'Google Nest Hub', 'price': 100, 'description': 'This is a Google Nest Hub smart display'},
             {'name': 'Microsoft Surface Laptop 4', 'price': 1000, 'description': 'This is a Microsoft Surface Laptop 4'}
         ]
+
+        sqlite3.connect('products.db')
+        self.con = sqlite3.connect('products.db')
+        self.create_table()
+
         self.initUI()
+
+    def create_table(self):
+        cursor = self.con.cursor()
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS products(
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT,
+                price INTEGER, 
+                description TEXT
+            )            
+        ''')
+        self.con.commit()
 
     def initUI(self):
         self.setWindowTitle('CRUD')
         self.setGeometry(0, 0, 700, 500)
+
 
         central_widget = QWidget(self)
         self.setCentralWidget(central_widget)
@@ -43,8 +63,9 @@ class Window(QMainWindow):
         self.table_widget = QTableWidget(self)
         layout.addWidget(self.table_widget)
 
-        self.table_widget.setRowCount(len(self.products))
-        self.table_widget.setColumnCount(len(self.products[0]))
+        self.table_widget.setRowCount(4)
+        self.table_widget.setColumnCount(['ID', 'Name', 'Price', 'Description'])
+        self.load_data()
 
         self.table_widget.setHorizontalHeaderLabels(self.products[0].keys())
 
@@ -75,7 +96,6 @@ class Window(QMainWindow):
         update_button = QPushButton('Update Product', self)
         update_button.clicked.connect(self.update_product)
 
-
         layout.addWidget(add_button)
         layout.addWidget(delete_button)
         layout.addWidget(update_button)
@@ -95,9 +115,6 @@ class Window(QMainWindow):
         for col, value in enumerate(updated_product.values()):
             item = QTableWidgetItem(str(value))
             self.table_widget.setItem(current_row, col, item)
-
-
-
 
     def delete_product(self):
         current_row = self.table_widget.currentRow()
@@ -126,19 +143,27 @@ class Window(QMainWindow):
         price = self.price_edit.text().strip()
         description = self.description_edit.text().strip()
 
-        new_product = {'name': name, 'price': price, 'description': description}
-        self.products.append(new_product)
-
-        # updating the table
-        row_position = len(self.products) - 1
-        self.table_widget.insertRow(row_position)
-        for col, value in enumerate(new_product.values()):
-            item = QTableWidgetItem(str(value))
-            self.table_widget.setItem(row_position, col, item)
+        cursor = self.con.cursor()
+        cursor.execute('''
+            INSERT INTO products (name, price, description) VALUES(?,?,?)
+        ''', (name, price, description,))
+        self.con.commit()
 
         self.name_edit.clear()
         self.price_edit.clear()
         self.description_edit.clear()
+
+    def load_data(self):
+        cursor = self.con.cursor()
+        cursor.execute('''SELECT * FROM products''')
+        products = cursor.fetchall()
+
+        self.table_widget.setRowCount(len(products))
+
+        for row, product in enumerate(products):
+            for col, value in enumerate(product):
+                item = QTableWidgetItem(str(value))
+                self.table_widget.setItem(row, col, item)
 
 
 app = QApplication(sys.argv)

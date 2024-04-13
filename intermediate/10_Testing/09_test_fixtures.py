@@ -13,10 +13,10 @@ class BluetoothDeviceTests(unittest.TestCase):
         power_cycle_device()
 
     def test_feature_a(self):
-        print('Testing Feature A')
+        print('Testing_unittest Feature A')
 
     def test_feature_b(self):
-        print('Testing Feature B')
+        print('Testing_unittest Feature B')
 
     @classmethod
     def tearDownClass(cls):
